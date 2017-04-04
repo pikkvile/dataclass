@@ -1,0 +1,22 @@
+{
+  "name": "dataclass",
+  "version": "0.0.1",
+  "description": "A tool to convert simple dsl to popular languages classes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pikkvile/dataclass.git"
+  },
+  "author": "pikkvile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pikkvile/dataclass/issues"
+  },
+  "homepage": "https://github.com/pikkvile/dataclass#readme",
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}

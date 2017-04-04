@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>DataClass</title>
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="src/js/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="src/css/index.css">
+    </head>
+    <body ng-app="DataClass" ng-controller="IndexCtrl">
+        <header>
+            <h1>Data Class</h1>
+            <p class="small">Write less code - <a href class="go" ng-click="parse()">GO!</a> have coffee sooner</p>
+        </header>
+        <main>
+            <div class="row">
+                <div class="panel">
+                    <form>
+                        <textarea rows="15" ng-model="src"></textarea>
+                    </form>
+                </div>
+                <div class="panel java-result">
+                    <div ng-show="target">
+                        <div ng-repeat="cls in target">
+							<p>public class {{cls.className}} {</p>
+							<p ng-repeat="f in cls.fields">private final {{f.type}} {{f.name}};</p>
+							<p>}</p>
+						</div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

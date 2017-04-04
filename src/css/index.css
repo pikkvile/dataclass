@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine');
+
+body {
+  font: 14px "Cousine", Helvetica, Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    text-align: center;
+    margin: auto;
+    display: table;
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+main .row {
+    display: table-row;
+}
+
+main .panel {
+    display: table-cell;
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.go {
+    border: 2px solid #EE6630;
+    color: #EE6630;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.go:hover {
+    text-decoration: underline;
+}
