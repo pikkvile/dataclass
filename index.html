@@ -11,23 +11,40 @@
     <body ng-app="DataClass" ng-controller="IndexCtrl">
         <header>
             <h1>Data Class</h1>
-            <p class="small">Write less code - <a href class="go" ng-click="parse()">GO!</a> have coffee sooner</p>
+            <p class="small">
+                <span>Write less code - </span>
+                <a href class="go" ng-click="parse()">GO!</a>
+                <span> have </span>
+                <span class="beer"><span class="coffee">coffee</span></span>
+                <span> sooner</span>
+            </p>
         </header>
         <main>
             <div class="row">
-                <div class="panel">
+                <div class="panel left">
                     <form>
                         <textarea rows="15" ng-model="src"></textarea>
                     </form>
                 </div>
-                <div class="panel java-result">
-                    <div ng-show="target">
+                <div class="panel right">
+                    <div ng-show="target" class="target">
                         <div ng-repeat="cls in target">
-							<p>public class {{cls.className}} {</p>
-							<p ng-repeat="f in cls.fields">private final {{f.type}} {{f.name}};</p>
-							<p>}</p>
-						</div>
-                    </form>
+                            <pre>
+<div><span class="kw">public class</span> {{cls.className}} {</div>
+<div ng-repeat="f in cls.fields"><span class="kw">    private final</span> {{f.type}} <span class="f">{{f.name}}</span>;</div>
+<div><span class="kw">    public static</span> Builder newBuilder() {</div><div>        <span class="kw">return new</span> Builder();</div><div>    }</div>
+<div><span class="kw">    private</span> {{cls.className}}(Builder builder) {</div><div ng-repeat="f in cls.fields">        <span class="kw">this</span>.<span class="f">{{f.name}}</span> = builder.<span class="f">{{f.name}}</span>;</div><div>    }</div>
+<div ng-repeat="f in cls.fields"><div>    <span class="kw">public</span> {{f.type}} get{{f.gsName}}() {</div><div>        <span class="kw">return</span> <span class="f">{{f.name}}</span>;</div><div>    }</div></div>
+<div><span class="kw">    public static class</span> Builder {</div>
+<div ng-repeat="f in cls.fields"><span class="kw">        private</span> {{f.type}} <span class="f">{{f.name}}</span>;</div>
+<div><span class="kw">        private</span> Builder() {}</div>
+<div><span class="kw">        public</span> {{cls.className}} build() {</div><div>            <span class="kw">return new</span> {{cls.className}}(this);</div><div>        }</div>
+<div ng-repeat="f in cls.fields"><div>        <span class="kw">public</span> Builder set{{f.gsName}}({{f.type}} <span class="f">{{f.name}}</span>) {</div><div>            <span class="kw">this</span>.<span class="f">{{f.name}}</span> = <span class="f">{{f.name}}</span>;</div><div>            <span class="kw">return this</span>;</div><div>        }</div></div>
+<div>    }</div>
+<div>}</div>
+                            </pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
